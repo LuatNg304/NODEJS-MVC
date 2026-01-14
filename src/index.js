@@ -6,7 +6,11 @@ const { engine } = require('express-handlebars');
 const app = express();
 const port = 3000;
 const route = require('./routes');
+const db = require('./config/db/index');
 
+//connect to db
+
+db.connect();
 app.use(express.static(path.join(__dirname, 'public'))); //dinh nghia file tinh
 app.use(express.urlencoded()); //middleware chuye nnhan du lieu tu form html
 app.use(express.json()); //dung de gui XMLhtml,axios,
@@ -14,18 +18,18 @@ app.use(express.json()); //dung de gui XMLhtml,axios,
 // app.use(morgan("combined"));
 
 // Template engine
-           app.engine(
+app.engine(
     'hbs',
     engine({
         extname: '.hbs',
     }),
 );
 app.set('view engine', 'hbs');
-app.set('views', path.join(__dirname, 'resource/views'));
+app.set('views', path.join(__dirname, 'resource', 'views'));
 
 //route init
 route(app);
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`);
+    console.log(`http://localhost:${port}`);
 });
