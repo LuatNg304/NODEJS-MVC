@@ -1,1 +1,11 @@
-{"version":3,"sourceRoot":"","sources":["../../resource/scss/app.scss","../../resource/scss/_variables.scss"],"names":[],"mappings":"AACA;EACI,OCFQ","file":"app.css"}
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "../../resource/scss/app.scss",
+    "../../resource/scss/_variables.scss"
+  ],
+  "names": [],
+  "mappings": "AACA;EACI,OCFQ",
+  "file": "app.css"
+}
